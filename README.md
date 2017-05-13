@@ -16,11 +16,14 @@ Allows remove all CR2 orphan from deleted JPG.
 ## Advanced sort
 
 Like "Simple sort" allows remove all CR2 orphan from deleted JPG. After this, enter a path name when you want to copie your
-photos with `pathdest\pathname` like `K:\photos\pathname`
-All JPG photos will be copied in `K:\photos\pathname`, and all CR2 photos K:\photos\pathname\RAW.
+photos with `pathdest\pathname` like `K:\photos\pathname`.
+
+All JPG photos will be copied in `K:\photos\pathname`, and all CR2 photos `K:\photos\pathname\RAW`.
 
 # Configure
 Set your base folder, ex `K:\photos`
 
 Line 3 : `set pathdest=K:\photos`
 
+# How to
+Copie this script into your directory when you have your JPG/CR2 and launch it.

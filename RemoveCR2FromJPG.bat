@@ -1,5 +1,5 @@
 @echo off
-rem Configuration du répertoire de destination dans pathdest de type K:\images:
+rem Configure your base path like K:\images:
 set pathdest=K:\images
 
 set current_path=%cd%
@@ -7,26 +7,25 @@ set current_path=%cd%
 :menu
 CLS
 echo.
-echo 1. Lisez-moi
-echo 2. Trie simple
-echo 3. Trie avanc‚e
-echo 4. Quitter
+echo 1. Read-me
+echo 2. Simple sort
+echo 3. Advanced sort
+echo 4. Exit
 echo. 
  
 :ifNotChoice
 set choicemenu=
-CHOICE /N /C:1234 /M "Quel choix ? "%1
+CHOICE /N /C:1234 /M "Your choice ? "%1
 IF ERRORLEVEL 1 SET choicemenu=1
 IF ERRORLEVEL 2 SET choicemenu=2
 IF ERRORLEVEL 3 SET choicemenu=3
 IF ERRORLEVEL 4 SET choicemenu=4
-rem set choicemenu=
-rem set /p choicemenu=Votre choix ? 
+
 echo;
 
 if %choicemenu%==1 goto readme
 if %choicemenu%==2 goto simple
-if %choicemenu%==3 goto avancee
+if %choicemenu%==3 goto advanced
 if %choicemenu%==4 goto exit 
 echo;
 
@@ -37,37 +36,37 @@ exit
 for %%a in (*.cr2) do (
 	if not exist "%%~na.jpg" ( 
 	del "%%a" 
-	echo Supression de %%a
+	echo Deleting %%a
 	)
-	echo La photo %%a n'est pas orpheline
+	echo Photo %%a is not orphan
 )
 echo;
-echo Trie OK.
+echo Sort OK.
 echo;
 pause
 goto exit
 
-:avancee
+:advanced
 echo;
-echo Triage en cours...
+echo Sorting in progress...
 echo;
 for %%a in (*.cr2) do (
 	if not exist "%%~na.jpg" ( 
 	del "%%a" 
-	echo supression de "%%a"
+	echo Deleting "%%a"
 	)
 	if exist "%%~na.jpg" ( 
-	echo La photo %%a n'est pas orpheline
+	echo Photo %%a is not orphan
 	)	
 )
 echo;
 set pathname=
-set /p pathname=Entrer un nom de dossier : 
+set /p pathname=Enter folder name : 
 if "%pathname%"=="" goto ifNotEnterPath
 goto ifFolderIsOk
 :ifNotEnterPath
 set pathname=
-set /p pathname=Un nom de dossier est requis : 
+set /p pathname=A name is required : 
 if "%pathname%"=="" goto ifNotEnterPath
 if NOT "%pathname%"=="" goto ifFolderIsOk
 goto ifFolderIsOk
@@ -75,12 +74,12 @@ goto ifFolderIsOk
 :ifFolderIsOk
 MKDIR "%pathdest%"\"%pathname%"
 echo;
-echo Copie des fichiers vers "%pathdest%\%pathname%" ...
+echo Copying to "%pathdest%\%pathname%" ...
 Xcopy *.JPG "%pathdest%"\"%pathname%"
 MKDIR "%pathdest%"\"%pathname%"\RAW
 Xcopy *.CR2 "%pathdest%"\"%pathname%"\RAW
 echo;
-echo Copie OK.
+echo Copy OK.
 explorer "%pathdest%"\"%pathname%"
 echo;
 
@@ -90,13 +89,15 @@ goto exit
 
 :readme
 echo;
-echo La fonction "Trie simple" permet simplement de supprimer les photos RAW orphelines en les comparant avec leur soeurs JPG. Si une photo JPG n'existe pas/plus, alors la CR2 n'a plus raison d'ˆtre !
+echo "Simple sort" : Allows remove all CR2 orphan from deleted JPG.
 echo;
 echo;
-echo La fonctione "Trie avanc‚e" similaire au Trie Simple, efface les photos CR2 orpheline et permets ‚galement de copier les photos dans le repertoire voulu. Le nom du repertoire de base est … configurer dans le code (ligne 3) et un nom de dossier sera demand‚ apres le trie. Les fichiers CR2 seront quand … eux copie dans un dossier RAW a la racine du nouveau dossier.
+echo "Advanced sort" : Like "Simple sort" allows remove all CR2 orphan from deleted JPG. 
+echo After this, enter a path name when you want to copie your photos with pathdest\pathname like K:\photos\pathname. 
+echo All JPG photos will be copied in K:\photos\pathname, and all CR2 photos K:\photos\pathname\RAW.
 echo;
 echo;
-pause>nul|set/p =Appuyez sur une touche pour revenir au menu 
+pause>nul|set/p =Enter any key for back to menu
 goto menu
 
 

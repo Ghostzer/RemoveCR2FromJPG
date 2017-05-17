@@ -2,7 +2,7 @@
 Batch application for remove your CR2 files if your JPG doesn't exist
 
 If you take photos RAW + JPG like me, maybe you want sort your photos automatically ?
-You copie your photos in a folder, you deleting JPG and CR2 are still there, OK for 4 photos, but what for 500 photos ?
+You copy your photos in a folder, you deleting JPG and CR2 are still there, OK for 4 photos, but what for 500 photos ?
 it's annoying...
 
 This script have 2 menus :
@@ -15,7 +15,7 @@ Allows remove all CR2 orphan from deleted JPG.
 
 ## Advanced sort
 
-Like "Simple sort" allows remove all CR2 orphan from deleted JPG. After this, enter a path name when you want to copie your
+Like "Simple sort" allows remove all CR2 orphan from deleted JPG. After this, enter a path name when you want to copy your
 photos with `pathdest\pathname` like `K:\photos\pathname`.
 
 All JPG photos will be copied in `K:\photos\pathname`, and all CR2 photos `K:\photos\pathname\RAW`.

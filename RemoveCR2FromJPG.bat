@@ -93,7 +93,7 @@ echo "Simple sort" : Allows remove all CR2 orphan from deleted JPG.
 echo;
 echo;
 echo "Advanced sort" : Like "Simple sort" allows remove all CR2 orphan from deleted JPG. 
-echo After this, enter a path name when you want to copie your photos with pathdest\pathname like K:\photos\pathname. 
+echo After this, enter a path name when you want to copy your photos with pathdest\pathname like K:\photos\pathname. 
 echo All JPG photos will be copied in K:\photos\pathname, and all CR2 photos K:\photos\pathname\RAW.
 echo;
 echo;

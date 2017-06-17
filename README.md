@@ -28,4 +28,4 @@ Set your base folder, ex `K:\photos`
 Line 3 : `set pathdest=K:\photos`
 
 # How to
-Copie this script into your directory when you have your JPG/CR2 and launch it.
+Copy this script into your directory when you have your JPG/CR2 and launch it.

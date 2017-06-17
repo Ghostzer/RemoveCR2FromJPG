@@ -19,7 +19,8 @@ Like "Simple sort" allows remove all CR2 orphan from deleted JPG. After this, en
 photos with `pathdest\pathname` like `K:\photos\pathname`.
 
 All JPG photos will be copied in `K:\photos\pathname`, and all CR2 photos `K:\photos\pathname\RAW`.
-If videos *.MOV exists, will be be copied in `K:\photos\pathname\Videos`.
+
+If videos *.MOV exists, will be copied in `K:\photos\pathname\Videos`.
 
 # Configure
 Set your base folder, ex `K:\photos`

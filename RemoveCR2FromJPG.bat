@@ -78,6 +78,8 @@ echo Copying to "%pathdest%\%pathname%" ...
 Xcopy *.JPG "%pathdest%"\"%pathname%"
 MKDIR "%pathdest%"\"%pathname%"\RAW
 Xcopy *.CR2 "%pathdest%"\"%pathname%"\RAW
+if exist *.MOV MKDIR "%pathdest%"\"%pathname%"\Videos
+if exist *.MOV Xcopy *.MOV "%pathdest%"\"%pathname%"\Videos
 echo;
 echo Copy OK.
 explorer "%pathdest%"\"%pathname%"
